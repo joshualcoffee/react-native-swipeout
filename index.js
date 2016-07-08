@@ -307,6 +307,9 @@ const Swipeout = React.createClass({
 
     return (
       <View style={styleSwipeout}>
+        
+        { this._renderButtons(this.props.right, isRightVisible, styleRight) }
+        { this._renderButtons(this.props.left, isLeftVisible, styleLeft) }
         <View
           ref="swipeoutContent"
           style={styleContent}
@@ -314,8 +317,6 @@ const Swipeout = React.createClass({
           {...this._panResponder.panHandlers}>
           {this.props.children}
         </View>
-        { this._renderButtons(this.props.right, isRightVisible, styleRight) }
-        { this._renderButtons(this.props.left, isLeftVisible, styleLeft) }
       </View>
     );
   },
